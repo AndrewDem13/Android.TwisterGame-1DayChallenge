@@ -129,17 +129,14 @@ public class GameActivity extends AppCompatActivity {
                     // Если все еще есть кому играть
                     if (game.failAction()) {
                         players.setText(String.valueOf(game.getUsersCount()));
-                        // TODO Toast message "player ID loose"
                         toast = Toast.makeText(getApplicationContext(), String.format(Locale.getDefault(), "Игрок %d проиграл :(", game.getCurrent().getId()), Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     }
                     else {
-                        // TODO Toast Game over
                         toast = Toast.makeText(getApplicationContext(), "Game over!", Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
-                        // TODO Winner congratulations
                         goCongrats();
                         break;
                     }
